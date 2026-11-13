@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Média</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Média</h1>
+
+            <p>Digite dois números para calcular a média:</p>
+
+            <label for="media1">Primeiro Número:</label>
+
+            <input type="number" id="media1">
+
+            <label for="media2">Segundo Número:</label>
+
+            <input type="number" id="media2">
+
+            <button onclick="botao_click()">Média</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let number1 = Number(document.getElementById("media1").value);
+
+            let number2 = Number(document.getElementById("media2").value);
+
+            let media = (number1 + number2) / 2;
+
+            alert("A médiia é " + media + "!");
+        }
+
+    </script>
+
+</body>
+</html>
