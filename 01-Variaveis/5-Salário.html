@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Salário</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Calculo de Salário:</h1>
+
+            <p>
+                Digite o Nome do Funcionário o valor da
+                hora e a quantidade de horas trabalhadas:
+            </p>
+
+            <label for="funcionario">Nome do Funcionário:</label>
+
+            <input type="text" id="funcionario">
+
+            <label for="valorHora">Valor da Hora Trabalhada:</label>
+
+            <input type="number" id="valorHora">
+
+            <label for="horasTrabalhadas">Quantidade de Horas Trabalhadas:</label>
+
+            <input type="number" id="horasTrabalhadas">
+
+            <button onclick="botao_click()">Calcular Salário</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let funcionario = document.getElementById("funcionario").value;
+
+            let valorHora = Number(document.getElementById("valorHora").value);
+
+            let horasTrabalhadas = parseInt(document.getElementById("horasTrabalhadas").value);
+
+            let salario = valorHora * horasTrabalhadas;
+
+            let resultado = "O salário do funcionário " + funcionario + " é de R$ " + salario.toFixed(2);
+
+            alert(resultado);
+
+        }
+
+    </script>
+
+</body>
+</html>

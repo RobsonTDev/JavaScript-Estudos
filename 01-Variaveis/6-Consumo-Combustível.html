@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Consumo de Combustível</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Consumo de Combustível:</h1>
+
+            <p>Digite a distância percorrida e o consumo de combustível:</p>
+
+            <label for="distancia">Distância Percorrida (km):</label>
+            <input type="number" id="distancia">
+
+            <label for="consumo">Consumo de Combustível (litros):</label>
+            <input type="number" id="consumo">
+
+            <button onclick="botao_click()">Média de km/l</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let distancia = Number(document.getElementById("distancia").value);
+
+            let consumo = Number(document.getElementById("consumo").value);
+
+            let media = distancia / consumo;
+
+            alert("A média de km/l é: " + media.toFixed(2));
+
+        }
+
+    </script>
+
+</body>
+</html>

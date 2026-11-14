@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculo de Idade</title>
+</head>
+<body>
+
+    <h1>Descubra sua idade:</h1>
+
+    <p>
+        Digite seu ano de nasciento e
+        o ano atual:
+    </p>
+
+    <label for="anoNascimento">Digite o ano de Nascimento:</label> <input type="date" id="anoNascimento">
+
+    <label for="anoAtual">Digite o ano atual:</label> <input type="date" id="anoAtual">
+
+    <button onclick="botao_click()">Calcular Idade</button>
+
+   <script>
+
+        function botao_click() {
+
+            let anoNascimento = new Date(document.getElementById("anoNascimento").value);
+
+            let anoAtual = new Date(document.getElementById("anoAtual").value);
+
+            let idade = anoAtual.getFullYear() - anoNascimento.getFullYear();
+
+            alert("Sua idade é: " + idade + " anos.");
+
+        }
+
+
+
+   </script>
+
+
+</body>
+</html>
+
+
+
+
+                     

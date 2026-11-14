@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Conversor de Temperatura</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e9eef5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            width: 100%;
+        }
+
+        .box {
+            position: relative;
+        }
+
+
+        .assinatura {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            font-size: 12px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #2563eb, #9333ea);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 0.5px;
+        }
+
+
+        h1 {
+            color: #263b5e;
+            font-size: 26px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        input {
+            padding: 12px;
+            width: 100%;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+            button:hover {
+                background-color: #1d4ed8;
+            }
+
+        /* Ajustes para celulares */
+        @media (max-width: 480px) {
+            .box {
+                padding: 22px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+        }
+
+
+
+
+    </style> 
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <span class="assinatura">RobsonT.Dev</span>
+
+            <h1>Conversor de Temperatura de Celsius para Fahrenheit</h1>
+
+            <p>Digite a temperatura em Celsius:</p>
+
+            <label for="celsius">Celsius:</label>
+
+            <input type="number" id="celsius">
+
+            <button onclick="botao_click()">Converter</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let celsius = Number(document.getElementById("celsius").value);
+
+            let fahrenheit = (celsius * 1.8) + 32;
+
+            alert("A temperatura em Fahrenheit é: " + fahrenheit);
+
+        }
+
+    </script>
+
+</body>
+</html>
