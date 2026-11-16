@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Conta de Energia</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Calculo da Conta de Energia:</h1>
+
+            <p>O Valor do KWh é R$ 0,85.</p>
+
+           <p>Mais o adicional de 18.00</p>
+
+            <label for="kwh">KWh Consumidos:</label>
+
+            <input type="number" id="kwh">
+
+            <label for="valorConta">Valor total da conta:</label>
+
+            <input type="text" id="valorConta" readonly>
+
+            <button type="button" onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let kwh = document.getElementById("kwh").value;
+
+            let valorConta = kwh * 0.85;
+
+            let valorAdicional = 18.00;
+
+            let valorTotal = valorConta + valorAdicional;
+
+            document.getElementById("valorConta").value = valorTotal.toFixed(2);
+
+        }
+
+    </script>
+
+</body>
+</html>
