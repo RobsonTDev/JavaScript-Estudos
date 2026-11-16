@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Desconto de Produtos</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <style>
+
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* FUNDO DA PÁGINA */
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #312e81, #4c1d95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px 20px;
+            color: #ffffff;
+        }
+
+        /* CONTAINER */
+        .container {
+            width: 100%;
+            max-width: 420px;
+        }
+
+        /* CAIXAS PRINCIPAIS */
+        .box {
+            position: relative;
+            padding: 35px 30px;
+            border-radius: 20px;
+            background: linear-gradient(145deg, #1e293b, #334155);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .box:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+            }
+
+            /* TÍTULOS */
+            .box h1 {
+                font-size: 25px;
+                color: #67e8f9;
+                margin-bottom: 5px;
+            }
+
+            /* PARÁGRAFOS */
+            .box p {
+                color: #cbd5e1;
+                font-size: 14px;
+                line-height: 1.6;
+                margin-bottom: 10px;
+            }
+
+            /* LABELS */
+            .box label {
+                font-size: 14px;
+                font-weight: bold;
+                color: #e2e8f0;
+            }
+
+            /* INPUTS */
+            .box input {
+                width: 100%;
+                padding: 13px;
+                border: 1px solid #475569;
+                border-radius: 9px;
+                outline: none;
+                background: #0f172a;
+                color: #ffffff;
+                font-size: 16px;
+                transition: border 0.3s, box-shadow 0.3s;
+            }
+
+                .box input:focus {
+                    border-color: #22d3ee;
+                    box-shadow: 0 0 10px rgba(34, 211, 238, 0.25);
+                }
+
+        /* INPUTS SOMENTE LEITURA */
+        .saida input[readonly] {
+            background: #172554;
+            border-color: #6366f1;
+            color: #67e8f9;
+            font-weight: bold;
+            cursor: default;
+        }
+
+        /* BOTÃO */
+        .box button {
+            margin-top: 15px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+            .box button:hover {
+                transform: scale(1.03);
+                box-shadow: 0 5px 20px rgba(124, 58, 237, 0.45);
+            }
+
+            .box button:active {
+                transform: scale(0.98);
+            }
+
+        /* ASSINATURA */
+        .assinatura {
+            position: absolute;
+            top: 13px;
+            right: 16px;
+            font-size: 12px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #22d3ee, #a78bfa);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* DIFERENCIAÇÃO DAS CAIXAS */
+        .entrada {
+            border-top: 3px solid #22d3ee;
+        }
+
+        .saida {
+            border-top: 3px solid #a78bfa;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 600px) {
+            body {
+                flex-direction: column;
+                padding: 25px 15px;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            .box {
+                padding: 35px 22px;
+            }
+
+                .box h1 {
+                    font-size: 22px;
+                }
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="box entrada">
+
+            <span class="assinatura">RobsonT.Dev</span>
+
+            <h1>Calculadora de Descontos:</h1>
+
+            <p>Digite o valor do produto e a porcentagem de desconto:</p>
+
+            <label for="valorProduto">Valor do Produto (R$):</label>
+
+            <input type="number" id="valorProduto">
+
+            <label for="porcentagemDesconto">Desconto (%):</label>
+
+            <input type="number" id="porcentagemDesconto">
+
+            <button type="button" onclick="botao_click()">Desconto</button>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box saida">
+
+            <h1>Resultado:</h1>
+
+            <label for="valorFinal">Valor Final com Desconto (R$):</label>
+
+            <input type="text" id="valorFinal" readonly>
+
+            <label for="valorDescontado">Valor Descontado (R$):</label>
+
+            <input type="text" id="valorDescontado" readonly>
+
+
+        </div>
+    </div>
+
+    <script>
+
+          function botao_click() {
+
+             let valorProduto = Number(document.getElementById("valorProduto").value);
+
+             let porcentagemDesconto = Number(document.getElementById("porcentagemDesconto").value);
+
+              if (document.getElementById("valorProduto").value === "") {
+                  alert("Digite o valor do produto.");
+              }
+              else if (valorProduto <= 0) {
+                  alert("O valor do produto não pode ser igual ou menor que zero.")
+              }
+              else if (document.getElementById("porcentagemDesconto").value === "") {
+                  alert("Digite a porcentagem de desconto.");
+              }
+              else if (porcentagemDesconto < 0) {
+                  alert("A porcentagem de desconto não pode ser menor que zero.");
+              }
+              else if (porcentagemDesconto > 100) {
+                  alert("O valor do desconto não pode ser maior que 100%.");
+              }
+              else {
+
+                let valorDesconto = valorProduto * (porcentagemDesconto / 100);
+
+                let valorFinal = valorProduto - valorDesconto;
+
+                document.getElementById("valorFinal").value = valorFinal.toFixed(2);
+
+                document.getElementById("valorDescontado").value = valorDesconto.toFixed(2);
+
+              }
+
+          }
+
+    </script>
+
+</body>
+</html>
