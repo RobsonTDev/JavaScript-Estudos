@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Operadora de Telefonia</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Calculo de conta telefônica</h1>
+
+            <p>Digite a quantidade de minutos utilizados:</p>
+
+            <label for="minutosConsumidos">Minutos Consumidos:</label>
+
+            <input type="number" id="minutosConsumidos">
+
+            <button onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+         function botao_click() {
+
+
+            let minutosConsumidos = Number(document.getElementById("minutosConsumidos").value);
+
+            let planoMinutos = 100;
+
+            let valorPlano = 50;
+
+            let minutosExcedentes = 2;
+
+                if (minutosConsumidos <= planoMinutos) {
+
+                    alert("O valor da sua conta é:  R$ " + valorPlano.toFixed(2));
+                }
+                else if (minutosConsumidos > planoMinutos) {
+
+                    let minExcedentes = minutosConsumidos - planoMinutos;
+
+                    let valorExcedente = minExcedentes * minutosExcedentes;
+
+                    let valorTotal = valorPlano + valorExcedente;
+
+                    alert("O valor da sua fatura é: R$ " + valorTotal.toFixed(2));
+                }
+
+         }
+
+    </script>
+
+</body>
+</html>

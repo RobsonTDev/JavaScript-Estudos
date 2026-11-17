@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Média de Notas</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Média de Notas</h1>
+
+            <p>Digite as notas do primeiro e segundo semestre:</p>
+
+            <label for="pSemestre">Primeiro Semestre:</label>
+
+            <input type="number" id="pSemestre">
+
+            <label for="sSemestre">Segundo Semestre:</label>
+
+            <input type="number" id="sSemestre">
+
+            <button onclick="botao_click()">Calcular Média</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+             let pSemestre = Number(document.getElementById("pSemestre").value);
+
+             let sSemestre = Number(document.getElementById("sSemestre").value);
+
+             let media = (pSemestre + sSemestre) / 2;
+
+            if (media >= 7) {
+                alert("Parabéns!! Você foi aprovado!")
+            }
+            else if (media < 7 && media >= 6) {
+                alert("Você está de recuperação.")
+            }
+            else { 
+                alert("Infelizmente você foi Reprovado.")
+            }
+               
+
+        }
+
+    </script>
+
+</body>
+</html>
