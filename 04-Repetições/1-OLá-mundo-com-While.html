@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Olá, Mundo!</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Olá, Mundo com While:</h1>
+
+            <p>Digite quantas vezes você quer que o programa diga "Olá, Mundo!":</p>
+
+            <label for="while">Olá, Mundo com While:</label>
+            
+            <input type="number" id="while">
+
+            <button onclick="botao_click()">Olá Mundo!</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let quantidadeOla = parseInt(document.getElementById("while").value);
+
+            while (quantidadeOla > 0) { 
+                alert("Olá Mundo!");
+
+                quantidadeOla = quantidadeOla - 1;
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
