@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Glicose</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Glicose</h1>
+
+            <p>Digite o valor da sua glicose:</p>
+
+            <label for="glicose">Glicose: mg/dL</label>
+            
+            <input type="number" id="glicose">
+
+            <button onclick="botao_click()">Glicose</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let glicose = Number(document.getElementById("glicose").value);
+
+            if (glicose <= 100) {
+                alert("Sua Glicose está normal!");
+            }
+            else if (glicose > 100 && glicose <= 140) {
+                alert("Sua Glicose está elevada!");
+            }
+            else if (glicose > 140) { 
+                alert("Você está com diabetes!"); 
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
