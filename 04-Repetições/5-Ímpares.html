@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Ímpares</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Ímpares:</h1>
+
+            <p>Digite o intervalo de números abaixo para saber os ímpares:</p>
+
+            <label for="inicial">Número Inicial:</label>
+
+            <input type="number" id="inicial">
+
+            <label for="final">Número Final:</label>
+
+            <input type="number" id="final">
+
+            <button onclick="botao_click()">Mostrar Ímpares</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let inicial = parseInt(document.getElementById("inicial").value);
+
+            let final = parseInt(document.getElementById("final").value);  
+
+            let mensagem = "Os números ímpares entre " + inicial + " e " + final + " são: \r";
+
+            let soma = 0;
+
+            let numerosImpares = [];
+
+            for (let i = inicial; i <= final; i++) { 
+
+                let resto = i % 2;
+
+                if (resto != 0) { 
+                    // Número ímpar encontrado
+                    soma += i;
+
+                    numerosImpares.push(i);
+                }
+            }
+            alert("Os números ímpares são: " + numerosImpares.join(", ") + "\r" + " E a soma deles é: " + soma);
+        }
+
+    </script>
+
+</body>
+</html>
+
