@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Ímpares e Pares</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <style>
+
+
+        /* ===== Configurações gerais ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: #e8e8f0;
+            background: radial-gradient(circle at top, #18213b 0%, transparent 45%), linear-gradient(135deg, #080b16, #101426 60%, #080b16);
+        }
+
+        /* ===== Container principal ===== */
+        .container {
+            width: 100%;
+            max-width: 430px;
+        }
+
+        /* ===== Caixa do projeto ===== */
+        .box {
+            position: relative;
+            padding: 28px 24px;
+            background: rgba(17, 22, 42, 0.92);
+            border: 1px solid rgba(0, 255, 255, 0.25);
+            border-radius: 18px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.08), 0 15px 35px rgba(0, 0, 0, 0.55), inset 0 0 20px rgba(0, 255, 255, 0.025);
+        }
+
+        /* ===== Assinatura neon 3D ===== */
+        #assinatura {
+            display: inline-block;
+            margin-bottom: 22px;
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            background: linear-gradient( 90deg, #00f5ff, #7b2cff, #ff00c8, #00f5ff );
+            background-size: 300% 100%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 0 5px rgba(0, 245, 255, 0.6));
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 2px 0 rgba(123, 44, 255, 0.4), 0 4px 0 rgba(123, 44, 255, 0.25), 0 0 15px rgba(255, 0, 200, 0.35);
+        }
+
+        /* ===== Título ===== */
+        h1 {
+            margin-bottom: 14px;
+            font-size: 22px;
+            line-height: 1.3;
+            color: #ffffff;
+            text-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
+        }
+
+        /* ===== Texto ===== */
+        .box > p {
+            margin-bottom: 18px;
+            line-height: 1.5;
+            font-size: 14px;
+            color: #aeb8d0;
+        }
+
+        /* ===== Labels ===== */
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #00eaff;
+        }
+
+        /* ===== Campos de entrada ===== */
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            margin-bottom: 16px;
+            background: #090e1d;
+            color: #ffffff;
+            border: 1px solid #293653;
+            border-radius: 9px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.25s ease;
+        }
+
+            input:focus {
+                border-color: #00eaff;
+                box-shadow: 0 0 8px rgba(0, 234, 255, 0.35), inset 0 0 8px rgba(0, 234, 255, 0.05);
+            }
+
+        /* ===== Resultados ===== */
+        #resultadoImpares,
+        #resultadoPares {
+            padding: 13px;
+            margin-top: 12px;
+            margin-bottom: 12px;
+            background: rgba(7, 12, 27, 0.8);
+            border-left: 3px solid #00eaff;
+            border-radius: 7px;
+            color: #dce6ff;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+
+        #resultadoPares {
+            border-left-color: #bd4dff;
+        }
+
+        /* ===== Botão ===== */
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 9px;
+            background: linear-gradient( 90deg, #00cfff, #7650ff );
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #35218c, 0 0 18px rgba(0, 207, 255, 0.2);
+            transition: 0.2s ease;
+        }
+
+            button:hover {
+                filter: brightness(1.15);
+                transform: translateY(-2px);
+                box-shadow: 0 7px 0 #35218c, 0 0 25px rgba(0, 207, 255, 0.4);
+            }
+
+            button:active {
+                transform: translateY(3px);
+                box-shadow: 0 2px 0 #35218c, 0 0 12px rgba(0, 207, 255, 0.25);
+            }
+
+        /* ===== Responsividade ===== */
+        @media (max-width: 480px) {
+            body {
+                padding: 14px;
+                align-items: flex-start;
+            }
+
+            .box {
+                padding: 23px 18px;
+                border-radius: 14px;
+            }
+
+            #assinatura {
+                font-size: 22px;
+                margin-bottom: 18px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            input,
+            button {
+                padding: 12px;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <span id="assinatura">RobsonT.Dev</span>
+
+            <h1>Descubra os Números Ímpares e Pares:</h1>
+
+            <p>Digite dois números para descobrir os ímpares e pares e a soma deles:</p>
+
+            <label for="inicial">Número Inicial:</label>
+            <input type="number" id="inicial">
+
+            <label for="final">Número Final:</label>
+            <input type="number" id="final">
+
+            <p id="resultadoImpares">Números Ímpares:</p>
+
+            <p id="resultadoPares">Números Pares:</p>
+
+            <button onclick="botao_click()">Descobrir</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let inicial = parseInt(document.getElementById("inicial").value);
+
+            let final = parseInt(document.getElementById("final").value);
+
+            let somaImpares = 0;
+
+            let somaPares = 0;
+
+            let numerosImpares = [];
+
+            let numerosPares = [];
+
+            if (inicial >= final) { 
+                alert("O número inicial dever ser menor que o número final.");
+                return;
+            }
+
+            for (let i = inicial; i <= final; i++) { 
+
+                let resto = i % 2;
+
+                // Se o resto da divisão for diferente de zero, significa que o número é ímpar
+                if (resto !== 0) {
+                    somaImpares += i;
+                    numerosImpares.push(i);
+                }
+                // Se o resto da divisão for igual a zero, significa que o número é par
+                else { 
+                    somaPares += i;
+                    numerosPares.push(i);
+                }
+            }
+            document.getElementById("resultadoImpares").innerHTML = "Os números ímpares entre " + inicial + 
+                " e " + final + " são: " + numerosImpares.join(", ") + " .<br>A soma dos números ímpares: " + somaImpares; 
+
+            document.getElementById("resultadoPares").innerHTML = "Os números pares entre " + inicial +
+                " e " + final + " são: " + numerosPares.join(", ") + " .<br>A soma dos números pares: " + somaPares;
+        }
+    </script>
+
+</body>
+</html>
+
+
