@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Soma dos Pares</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Soma dos Pares:</h1>
+
+            <p>Digite um número e clique no botão para ver a soma dos números pares até esse número:</p>
+
+            <label for="final">Número Final:</label>
+            
+            <input type="number" id="final">
+
+            <button onclick="botao_click()">Pares</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let final = parseInt(document.getElementById("final").value);
+
+            let soma = 0;
+
+            let numerosPares = [];
+
+            for (let i = 1; i <= final; i++) { 
+
+                let par = i % 2;
+
+                // Verifica se o número é par
+                if (par == 0) { 
+                    soma += i;
+                    numerosPares.push(i);
+                }
+            }
+            alert("Os números pares de 1 até " + final + " são: " + numerosPares.join(", ") + "\r E a soma deles é : " + soma); 
+        }
+
+    </script>
+
+</body>
+</html>
