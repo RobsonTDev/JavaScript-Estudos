@@ -16,11 +16,11 @@
 
             <p>Digite um número para mostras os primos de 1 até ele:</p>
 
-            <label for="final">:</label>
+            <label for="final">Digite um número:</label>
             
             <input type="number" id="final">
 
-            <button onclick="botao_click()">Botão</button>
+            <button onclick="botao_click()">Primos</button>
             
         </div>
     </div>
@@ -29,8 +29,28 @@
 
         function botao_click() {
 
-           let final = document.get
+            let final = parseInt(document.getElementById("final").value);
 
+            let primos = [];
+
+            for (let i = 2; i <= final; i++) { 
+
+                let isPrimo = true;
+
+                for (let j = 2; j < i; j++) { 
+
+                    if (i % j === 0) { 
+
+                        isPrimo = false;
+                        break;
+                    }
+                } 
+                if (isPrimo) { 
+                    primos.push(i);
+                }
+            }
+            alert("Os números primos até " + final + " são: " + primos.join(", "));
+          
         }
 
     </script>
