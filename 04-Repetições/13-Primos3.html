@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Primos 3</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Primos 3:</h1>
+
+            <p>Diigite um número para ver os primos até ele:</p>
+
+            <label for="final">Descobrir primos:</label>
+            
+            <input type="number" id="final">
+
+            <button onclick="botao_click()">Primos</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let final = parseInt(document.getElementById("final").value);
+
+            let primos = [];
+
+            for (let i = 2; i <= final; i++) { 
+
+                let isPrimo = true;
+
+                for (let j = 2; j < i; j++) { 
+
+                    if (i % j === 0) { 
+                        isPrimo = false;
+                        break;
+                    }
+                }
+                if (isPrimo) { 
+                    primos.push(i);
+                }
+            }   
+            alert("Os números primos até " + final + " são: " + primos.join(", ")); 
+        }
+
+    </script>
+
+</body>
+</html>
+            
+
