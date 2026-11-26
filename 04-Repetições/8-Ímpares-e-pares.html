@@ -10,174 +10,226 @@
     <style>
 
 
-        /* ===== Configurações gerais ===== */
+
+
+        /* ===== Reset geral ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* ===== Fundo da página ===== */
         body {
             min-height: 100vh;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
+            align-items: flex-start;
             font-family: "Segoe UI", Arial, sans-serif;
-            color: #e8e8f0;
-            background: radial-gradient(circle at top, #18213b 0%, transparent 45%), linear-gradient(135deg, #080b16, #101426 60%, #080b16);
+            color: #f5f5f5;
+            background: radial-gradient( circle at top, rgba(180, 0, 35, 0.20), transparent 45% ), linear-gradient( 135deg, #080808, #171717 50%, #090909 );
         }
 
-        /* ===== Container principal ===== */
+        /* ===== Área principal ===== */
         .container {
             width: 100%;
-            max-width: 430px;
+            max-width: 760px;
+            margin: 0 auto;
         }
 
-        /* ===== Caixa do projeto ===== */
+        /* ===== Painel do projeto ===== */
         .box {
-            position: relative;
-            padding: 28px 24px;
-            background: rgba(17, 22, 42, 0.92);
-            border: 1px solid rgba(0, 255, 255, 0.25);
-            border-radius: 18px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.08), 0 15px 35px rgba(0, 0, 0, 0.55), inset 0 0 20px rgba(0, 255, 255, 0.025);
+            width: 100%;
+            padding: 35px;
+            background: #151515;
+            border: 1px solid #333;
+            border-top: 5px solid #d71920;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.55), 0 0 25px rgba(215, 25, 32, 0.08);
         }
 
-        /* ===== Assinatura neon 3D ===== */
+        /* ===== Assinatura ===== */
         #assinatura {
             display: inline-block;
-            margin-bottom: 22px;
-            font-size: 24px;
+            margin-bottom: 25px;
+            font-size: 27px;
             font-weight: 900;
             letter-spacing: 1px;
-            background: linear-gradient( 90deg, #00f5ff, #7b2cff, #ff00c8, #00f5ff );
-            background-size: 300% 100%;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            filter: drop-shadow(0 0 5px rgba(0, 245, 255, 0.6));
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 2px 0 rgba(123, 44, 255, 0.4), 0 4px 0 rgba(123, 44, 255, 0.25), 0 0 15px rgba(255, 0, 200, 0.35);
+            color: #ffffff;
+            text-shadow: 2px 2px 0 #d71920, 4px 4px 0 #333;
         }
 
         /* ===== Título ===== */
         h1 {
-            margin-bottom: 14px;
-            font-size: 22px;
+            margin-bottom: 18px;
+            font-size: clamp(22px, 3vw, 30px);
             line-height: 1.3;
             color: #ffffff;
-            text-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
         }
 
-        /* ===== Texto ===== */
+        /* ===== Descrição ===== */
         .box > p {
-            margin-bottom: 18px;
-            line-height: 1.5;
-            font-size: 14px;
-            color: #aeb8d0;
+            margin-bottom: 22px;
+            color: #c5c5c5;
+            font-size: 15px;
+            line-height: 1.7;
         }
 
         /* ===== Labels ===== */
         label {
             display: block;
-            margin-bottom: 7px;
+            margin: 20px 0 8px;
             font-size: 14px;
-            font-weight: 600;
-            color: #00eaff;
+            font-weight: 700;
+            color: #eeeeee;
         }
 
-        /* ===== Campos de entrada ===== */
+        /* ===== Campos ===== */
         input {
+            display: block;
             width: 100%;
-            padding: 12px 14px;
-            margin-bottom: 16px;
-            background: #090e1d;
+            padding: 13px 15px;
+            margin-bottom: 12px;
+            background: #090909;
             color: #ffffff;
-            border: 1px solid #293653;
-            border-radius: 9px;
+            border: 1px solid #444;
+            border-radius: 8px;
             font-size: 16px;
             outline: none;
             transition: 0.25s ease;
         }
 
             input:focus {
-                border-color: #00eaff;
-                box-shadow: 0 0 8px rgba(0, 234, 255, 0.35), inset 0 0 8px rgba(0, 234, 255, 0.05);
+                border-color: #d71920;
+                box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.15);
             }
 
-        /* ===== Resultados ===== */
+        /* ===== Blocos de resultado ===== */
         #resultadoImpares,
-        #resultadoPares {
-            padding: 13px;
-            margin-top: 12px;
-            margin-bottom: 12px;
-            background: rgba(7, 12, 27, 0.8);
-            border-left: 3px solid #00eaff;
-            border-radius: 7px;
-            color: #dce6ff;
+        #resultadoPares,
+        #resultadoPrimos {
+            padding: 16px;
+            margin: 15px 0;
+            background: #0c0c0c;
+            border: 1px solid #303030;
+            border-left: 4px solid #d71920;
+            border-radius: 8px;
+            color: #eeeeee;
             font-size: 14px;
-            line-height: 1.6;
+            line-height: 1.8;
             overflow-wrap: anywhere;
+            word-break: normal;
         }
 
+        /* Resultado dos pares */
         #resultadoPares {
-            border-left-color: #bd4dff;
+            border-left-color: #ffffff;
         }
 
-        /* ===== Botão ===== */
+        /* Resultado dos primos */
+        #resultadoPrimos {
+            border-left-color: #777777;
+        }
+
+        /* ===== Botões ===== */
         button {
+            display: block;
             width: 100%;
-            padding: 13px;
-            margin-top: 8px;
-            border: none;
-            border-radius: 9px;
-            background: linear-gradient( 90deg, #00cfff, #7650ff );
+            padding: 14px 18px;
+            margin: 18px 0 25px;
+            background: linear-gradient( 90deg, #b80018, #e21b2d );
             color: #ffffff;
+            border: none;
+            border-radius: 8px;
             font-size: 15px;
             font-weight: 800;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
             cursor: pointer;
-            box-shadow: 0 5px 0 #35218c, 0 0 18px rgba(0, 207, 255, 0.2);
+            box-shadow: 0 5px 0 #70000d, 0 8px 18px rgba(215, 25, 32, 0.15);
             transition: 0.2s ease;
         }
 
             button:hover {
                 filter: brightness(1.15);
                 transform: translateY(-2px);
-                box-shadow: 0 7px 0 #35218c, 0 0 25px rgba(0, 207, 255, 0.4);
+                box-shadow: 0 7px 0 #70000d, 0 10px 25px rgba(215, 25, 32, 0.25);
             }
 
             button:active {
                 transform: translateY(3px);
-                box-shadow: 0 2px 0 #35218c, 0 0 12px rgba(0, 207, 255, 0.25);
+                box-shadow: 0 2px 0 #70000d;
             }
 
-        /* ===== Responsividade ===== */
-        @media (max-width: 480px) {
+        /* ===== Responsividade para celulares ===== */
+        @media (max-width: 600px) {
             body {
-                padding: 14px;
-                align-items: flex-start;
+                padding: 18px 12px;
+            }
+
+            .container {
+                max-width: 100%;
             }
 
             .box {
-                padding: 23px 18px;
-                border-radius: 14px;
+                padding: 24px 18px;
+                border-radius: 12px;
             }
 
             #assinatura {
+                font-size: 23px;
+                margin-bottom: 20px;
+            }
+
+            h1 {
                 font-size: 22px;
-                margin-bottom: 18px;
+            }
+
+            .box > p {
+                font-size: 14px;
+            }
+
+            label {
+                font-size: 13px;
+            }
+
+            input {
+                padding: 13px;
+                font-size: 16px;
+            }
+
+            button {
+                padding: 14px;
+                font-size: 14px;
+            }
+
+            #resultadoImpares,
+            #resultadoPares,
+            #resultadoPrimos {
+                padding: 13px;
+                font-size: 13px;
+            }
+        }
+
+        /* ===== Telas muito pequenas ===== */
+        @media (max-width: 360px) {
+            body {
+                padding: 12px 8px;
+            }
+
+            .box {
+                padding: 20px 14px;
             }
 
             h1 {
                 font-size: 20px;
             }
 
-            input,
-            button {
-                padding: 12px;
+            #assinatura {
+                font-size: 21px;
             }
         }
+
 
 
 
@@ -189,21 +241,32 @@
 
             <span id="assinatura">RobsonT.Dev</span>
 
-            <h1>Descubra os Números Ímpares e Pares:</h1>
+            <h1>Descubra os Números Ímpares, Pares e Primos:</h1>
 
-            <p>Digite dois números para descobrir os ímpares e pares e a soma deles:</p>
+            <p>
+                Digite dois números para descobrir os ímpares e pares e a soma deles,
+                no Terceiro campo Digite um número para Descobrir os Primos:
+            </p>
 
-            <label for="inicial">Número Inicial:</label>
+            <label for="inicial">Número Inicial Para Descobrir Ímpares e Pares:</label>
             <input type="number" id="inicial">
 
-            <label for="final">Número Final:</label>
+            <label for="final">Número Final Para Descobrir Ímpares e Pares:</label>
             <input type="number" id="final">
 
             <p id="resultadoImpares">Números Ímpares:</p>
 
             <p id="resultadoPares">Números Pares:</p>
 
-            <button onclick="botao_click()">Descobrir</button>
+            <button onclick="botao_click()">Descobrir Pares e Ímpares</button>
+
+            <label for="finalPrimo">Digite um número para descobrir os primos até ele:</label>
+            <input type="number" id="finalPrimo">
+
+            <p id="resultadoPrimos">Números Primos:</p>
+
+            <button onclick="botao_primos()">Números Primos</button>
+
 
         </div>
     </div>
@@ -250,9 +313,37 @@
             document.getElementById("resultadoPares").innerHTML = "Os números pares entre " + inicial +
                 " e " + final + " são: " + numerosPares.join(", ") + " .<br>A soma dos números pares: " + somaPares;
         }
+        function botao_primos() {
+
+            let finalPrimo = parseInt(document.getElementById("finalPrimo").value);
+
+            let primos = [];
+
+            for (let i = 2; i <= finalPrimo; i++) { 
+
+                let ehPrimo = true;
+
+                for (let j = 2; j < i; j++) { 
+
+                    if (i % j === 0) { 
+                        ehPrimo = false;
+                        break;
+                    }
+                }
+                if (ehPrimo) { 
+                    primos.push(i);
+                }
+            }
+            document.getElementById("resultadoPrimos").innerHTML = "Os números primos até " + finalPrimo + " são: " + primos.join(", ");
+
+        }
     </script>
 
 </body>
 </html>
+                 
+
+
+
 
 
