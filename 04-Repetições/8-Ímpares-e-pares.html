@@ -5,12 +5,31 @@
     <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+   
+    
     <style>
 
 
+        /* ===== Cabeçalho com escudo ===== */
+        .cabecalho {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
 
+        /* ===== Escudo do São Paulo ===== */
+        .escudo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 5px rgba(215, 25, 32, 0.4));
+        }
+
+        /* Ajuste da assinatura */
+        #assinatura {
+            margin-bottom: 0;
+        }
 
         /* ===== Reset geral ===== */
         * {
@@ -163,6 +182,18 @@
 
         /* ===== Responsividade para celulares ===== */
         @media (max-width: 600px) {
+
+            
+            .escudo {
+                    width: 40px;
+                    height: 40px;
+            }
+
+            .cabecalho {
+                    gap: 12px;
+            }
+            
+
             body {
                 padding: 18px 12px;
             }
@@ -239,7 +270,16 @@
     <div class="container">
         <div class="box">
 
-            <span id="assinatura">RobsonT.Dev</span>
+
+            <div class="cabecalho">
+                <img src="escudo-teste.png" width="100" alt="Escudo teste">
+
+
+
+
+                <span id="assinatura">RobsonT.Dev</span>
+            </div>
+
 
             <h1>Descubra os Números Ímpares, Pares e Primos:</h1>
 
